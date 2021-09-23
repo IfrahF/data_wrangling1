@@ -93,6 +93,12 @@ read.csv will read everything as a dataframe. read_csv will read things as a tib
 litters_df_base = read.csv("data/FAS_litters.csv")
 ```
 
+## How do I export data?
+
+```{r}
+write_csv(fellow_df, "data/fellowship_words.csv")
+```
+
 
 
 
