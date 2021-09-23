@@ -185,3 +185,23 @@ tail(litters_df)
     ## 6 Low8  #110                    25.5          42.7            20
     ## # … with 3 more variables: Pups born alive <int>, Pups dead @ birth <int>,
     ## #   Pups survive <int>
+
+## Reading MLB data xlsx file.
+
+``` r
+mlb11_df = read_excel("data/mlb11.xlsx")
+```
+
+## LotR words file.
+
+``` r
+fellow_df = read_excel("data/LotR_Words.xlsx", range = "B3:D6")
+```
+
+## Read SAS File
+
+Tried reading SAS file but got errors.
+
+``` r
+pulse_df = read_sas("data/public_pulse_data.sas7bdat")
+```

@@ -7,6 +7,8 @@ output: github_document
 
 ```{r, echo = FALSE, message = FALSE}
 library(tidyverse)
+library(readxl)
+library(haven)
 ```
 
 # Import Data
@@ -34,7 +36,7 @@ tail(litters_df, 10)
 skimr::skim(litters_df)
 ```
 
-## Arguments in read.csv
+## Arguments in read_csv
 
 ```{r}
 litters_df =
@@ -62,3 +64,37 @@ litters_df = read_csv(file = "./data/FAS_litters.csv",
 )
 tail(litters_df)
 ```
+
+## Reading MLB data xlsx file.
+
+```{r}
+mlb11_df = read_excel("data/mlb11.xlsx")
+```
+
+## LotR words file.
+
+```{r}
+fellow_df = read_excel("data/LotR_Words.xlsx", range = "B3:D6")
+```
+
+## Read SAS File
+
+Tried reading SAS file but got errors.
+
+```{r, eval = FALSE}
+pulse_df = read_sas("data/public_pulse_data.sas7bdat")
+````
+
+## why to never use read.csv instead of read_csv
+
+read.csv will read everything as a dataframe. read_csv will read things as a tibble.
+
+```{r}
+litters_df_base = read.csv("data/FAS_litters.csv")
+```
+
+
+
+
+
+
