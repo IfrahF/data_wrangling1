@@ -135,7 +135,7 @@ Data summary
 | pups\_dead\_birth |          0 |           1.00 |  0.33 | 0.75 |  0.0 |  0.00 |  0.00 |  0.00 |  4.0 | ▇▂▁▁▁ |
 | pups\_survive     |          0 |           1.00 |  6.41 | 2.05 |  1.0 |  5.00 |  7.00 |  8.00 |  9.0 | ▁▃▂▇▇ |
 
-## Arguments in read.csv
+## Arguments in read\_csv
 
 ``` r
 litters_df =
@@ -204,4 +204,19 @@ Tried reading SAS file but got errors.
 
 ``` r
 pulse_df = read_sas("data/public_pulse_data.sas7bdat")
+```
+
+## why to never use read.csv instead of read\_csv
+
+read.csv will read everything as a dataframe. read\_csv will read things
+as a tibble.
+
+``` r
+litters_df_base = read.csv("data/FAS_litters.csv")
+```
+
+## How do I export data?
+
+``` r
+write_csv(fellow_df, "data/fellowship_words.csv")
 ```
