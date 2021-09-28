@@ -134,13 +134,27 @@ filter(litters_data, group %in% c("Con7", "Con8"))
 filter(litters_data, group == "Con7", gd_of_birth == 20)
 ```
 
+# Mutate
 
+Let's add or change things:
+```{r}
+mutate(
+  litters_data, 
+  weight_change = gd18_weight - gd0_weight,
+  group = str_to_lower(group)
+  )
+```
+
+
+## Arrange
+
+```{r}
+arrange(litters_data, desc(gd0_weight))
+arrange(litters_data, gd_of_birth, gd0_weight)
+```
 
 
 
 ```{r}
 
 ```
-
-
-
