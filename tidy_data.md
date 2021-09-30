@@ -1,23 +1,15 @@
----
-title: "Tidy Data"
-output: github_document
----
-
-```{r, echo = FALSE, message = FALSE}
-library(tidyverse)
-library(readxl)
-library(haven)
-```
+Tidy Data
+================
 
 # Import SAS
 
-```{r}
+``` r
 pulse_df = read_sas("data/public_pulse_data.sas7bdat")
 ```
 
-Let's try to pivot!
+Let’s try to pivot!
 
-```{r}
+``` r
 pulse_tidy = 
   pulse_df %>%
   pivot_longer(
@@ -30,7 +22,4 @@ pulse_tidy =
     visit = replace(visit, visit == "BL", "00m"),
     visit = factor(visit)
   )
-``` 
-
-
-
+```
